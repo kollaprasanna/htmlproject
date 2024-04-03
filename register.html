@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <title>Welcome To Registration Form</title>
+<script>
+function registration()
+	{
+    
+		var name= document.getElementById("t1").value;
+		var email= document.getElementById("t2").value;
+		var uname= document.getElementById("t3").value;
+		var pwd= document.getElementById("t4").value;
+		var cpwd= document.getElementById("t5").value;
+        //email id expression code
+		var pwd_expression = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-])/;
+		var letters = /^[A-Za-z]+$/;
+		var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+		if(name=='')
+		{
+			alert('Please enter your name');
+		}
+		else if(!letters.test(name))
+		{
+			alert('Name field required only alphabet characters');
+		}
+		else if(email=='')
+		{
+			alert('Please enter your user email id');
+		}
+		else if (!filter.test(email))
+		{
+			alert('Invalid email');
+		}
+		else if(uname=='')
+		{
+			alert('Please enter the user name.');
+		}
+		else if(!letters.test(uname))
+		{
+			alert('User name field required only alphabet characters');
+		}
+		else if(pwd=='')
+		{
+			alert('Please enter Password');
+		}
+		else if(cpwd=='')
+		{
+			alert('Enter Confirm Password');
+		}
+		else if(!pwd_expression.test(pwd))
+		{
+			alert ('Upper case, Lower case, Special character and Numeric letter are required in Password filed');
+		}
+		else if(pwd != cpwd)
+		{
+			alert ('Password not Matched');
+		}
+		else if(document.getElementById("t5").value.length < 6)
+		{
+			alert ('Password minimum length is 6');
+		}
+		else if(document.getElementById("t5").value.length > 12)
+		{
+			alert ('Password max length is 12');
+		}
+		else
+		{
+               alert('Thank You for Register & You are Redirecting to Login Page');
+			   window.location = "file:///D:/JAVA_PRACTICE/html_project/login.html";
+		}
+	}
+	function clearFunc()
+	{
+		document.getElementById("t1").value="";
+		document.getElementById("t2").value="";
+		document.getElementById("t3").value="";
+		document.getElementById("t4").value="";
+		document.getElementById("t5").value="";
+         }
+</script>
+<style>
+form{
+  text-align: center;
+}
+h1{
+  text-align: center;
+}
+
+#nav {
+width:370px;
+margin:0 auto;
+list-style:none;
+}
+#nav li {
+float:left;
+font-size: 20px;
+}
+#nav a {
+display:block;
+text-align:center;
+width:150px;
+text-decoration:none;
+}
+form{
+text-align:center;
+}
+</style>
+  </head>
+
+	<body>
+        <ul id="nav">
+          <li><a href="file:///D:/JAVA_PRACTICE/html_project/login.html">Sign in</a></li>
+          <li><a href="file:///D:/JAVA_PRACTICE/html_project/register.html">Sign Up</a></li>
+        </ul><br>
+       <!-- Main div code -->
+	<div id="main">
+	<div class="h-tag">
+	<h1>REGISTRACTION FORM</h2>
+	</div>
+	<!-- create account div -->
+	<div class="login">
+	<table cellspacing="2" align="center" cellpadding="8" border="0">
+	<tr>
+	<td align="center">Name :</td>
+	<td><input type="text"  id="t1" class="tb" /></td>
+	</tr>
+	<tr>
+	<td align="center">Email ID :</td>
+	<td><input type="text"  id="t2" class="tb" /></td>
+	</tr>
+	<tr>
+	<td align="center"> Username :</td>
+	<td><input type="text"  id="t3" class="tb" /></td>
+	</tr>
+	<tr>
+	<td align="center">Password :</td>
+	<td><input type="password" id="t4" class="tb" /></td>
+	</tr>
+	<tr>
+	<td align="center">Confirm Password :</td>
+	<td><input type="password" id="t5" class="tb" /></td>
+	</tr>
+        <tr>
+        <td align="center">Gender:</td>
+         <td>
+                 <div class="gender">
+                      <label>
+                        <input type="radio" id="t6" name="gender" value="male">Male
+                        <input type="radio" id="t6" name="gender" value="Female">FeMale
+                       </label>
+                 </div>
+           </td>
+           </tr>
+           <tr>
+        <td align="center">Branch:</td>
+         <td>
+                 <div class="Branch"><br>
+                 <label>
+                  <input type="checkbox" id="t7" name="CSC" value="CSC"/>CSC<br>
+                  <input type="checkbox" id="t7" name="Civil" value="Civil"/>Civil<br>
+                  <input type="checkbox" id="t7" name="MCA" value="MCA"/>MCA
+                 </label>
+                </div>
+         </td>
+         </tr>
+         <tr>
+         <td align="center">Select State:</td>
+         <td>
+                 <div class="State"><br>
+                 <label>
+                     <select>
+     <option value = "Andhra Pradesh"> AP
+     </option>
+     <option value = "Telangana"> TS
+     </option>
+     <option value = "Madhya Pradesh"> MP
+      </option>
+      <option value = "Utthara Pradesh"> UP
+      </option>
+      </select>  <br>
+ </label>
+</div>
+</td>
+</tr>
+<tr>
+<td align="center">Search Here:</td>
+         <td>
+                 <div class="Search"><br>
+                 <label>
+                  <input type="search" name="q">
+              <input type="submit" value="search"> <br>
+                </label>
+                 </div>
+                 </td>
+                  </tr>
+<tr>
+<td align="center">Select file to upload:</td>
+         <td>
+                 <div class="upload"><br>
+                 <label>
+                  <input type="file" name="newfile"> <br>
+
+         </label>
+                 </div>
+                 </td>
+                  </tr>
+
+           <tr>
+	<td></td>
+	<td>
+	<input type="reset" value="Reset" onclick="clearFunc()" id="res" class="btn" />
+	<input type="submit" value="Register" class="btn" onclick="registration()" /></td>
+	</tr>
+</tr>
+	</table>
+	</div>
+	<!-- create account box ending here.. -->
+	</div>
+	<!-- Main div ending here... -->
+	</body>
+	</html>
